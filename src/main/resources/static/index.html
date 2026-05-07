@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Notes AI</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main class="app-shell">
+        <section class="workspace">
+            <header class="topbar">
+                <div>
+                    <p class="eyebrow">Spring AI study workspace</p>
+                    <h1>Study Notes AI</h1>
+                </div>
+                <div class="status-pill" id="apiStatus">Ready</div>
+            </header>
+
+            <section class="panel upload-panel" aria-labelledby="uploadTitle">
+                <div>
+                    <p class="section-kicker">Notes library</p>
+                    <h2 id="uploadTitle">Upload notes</h2>
+                </div>
+                <form id="uploadForm" class="stacked-form">
+                    <label>
+                        Subject
+                        <input id="uploadSubject" name="subject" type="text" placeholder="Java, Spring AI, Biology" required>
+                    </label>
+                    <label>
+                        Notes file
+                        <input id="notesFile" name="file" type="file" required>
+                    </label>
+                    <button type="submit">Upload notes</button>
+                </form>
+                <p class="result-message" id="uploadResult"></p>
+            </section>
+
+            <section class="panel ask-panel" aria-labelledby="askTitle">
+                <div class="section-heading">
+                    <div>
+                        <p class="section-kicker">Tutor</p>
+                        <h2 id="askTitle">Ask your notes</h2>
+                    </div>
+                    <button class="secondary-button" id="clearAnswer" type="button">Clear</button>
+                </div>
+                <form id="askForm" class="stacked-form">
+                    <div class="two-column">
+                        <label>
+                            Subject
+                            <input id="askSubject" name="subject" type="text" placeholder="Spring AI" required>
+                        </label>
+                        <label>
+                            Mode
+                            <select id="answerMode">
+                                <option value="rag">Answer</option>
+                                <option value="insight">Insight</option>
+                                <option value="search">Search</option>
+                            </select>
+                        </label>
+                    </div>
+                    <label>
+                        Question
+                        <textarea id="query" name="query" rows="4" placeholder="Explain vector stores with an example" required></textarea>
+                    </label>
+                    <button type="submit">Run</button>
+                </form>
+                <article class="answer-box" id="answerBox">
+                    <p class="muted">Your answer, search results, or structured insight will appear here.</p>
+                </article>
+            </section>
+        </section>
+
+        <aside class="side-panel">
+            <section class="panel compact-panel" aria-labelledby="quickActionsTitle">
+                <p class="section-kicker">Manage</p>
+                <h2 id="quickActionsTitle">Quick actions</h2>
+                <form id="deleteForm" class="stacked-form">
+                    <label>
+                        Delete subject notes
+                        <input id="deleteSubject" name="subject" type="text" placeholder="Subject to remove" required>
+                    </label>
+                    <button class="danger-button" type="submit">Delete notes</button>
+                </form>
+                <p class="result-message" id="deleteResult"></p>
+            </section>
+
+            <section class="panel compact-panel">
+                <p class="section-kicker">Flow</p>
+                <ol class="flow-list">
+                    <li>Upload a notes file with a subject.</li>
+                    <li>Ask a question using that subject.</li>
+                    <li>Switch modes for answers, search, or study insight.</li>
+                </ol>
+            </section>
+        </aside>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>

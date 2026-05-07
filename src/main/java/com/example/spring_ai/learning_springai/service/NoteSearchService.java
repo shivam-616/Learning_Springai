@@ -30,7 +30,6 @@ public class NoteSearchService {
                 .similarityThreshold(0.7)
                 .filterExpression(fe)
                 .build();
-
         return vectorStore.similaritySearch(searchRequest);
     }
 }

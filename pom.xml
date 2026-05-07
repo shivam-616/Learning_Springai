@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.5.14</version>
+        <version>3.5.0</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.example.spring_ai</groupId>
@@ -62,16 +62,28 @@
             <artifactId>spring-ai-advisors-vector-store</artifactId>
         </dependency>
 
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <scope>runtime</scope>
+        </dependency>
 
+        <dependency>
+            <groupId>org.springframework.ai</groupId>
+            <artifactId>spring-ai-starter-model-chat-memory-repository-jdbc</artifactId>
+        </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web-services</artifactId>
         </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
+
     </dependencies>
+
     <dependencyManagement>
         <dependencies>
             <dependency>
