@@ -8,15 +8,61 @@
 </head>
 <body>
     <main class="app-shell">
-        <section class="workspace">
-            <header class="topbar">
+        <section class="hero-panel">
+            <nav class="nav-bar" aria-label="Application">
                 <div>
-                    <p class="eyebrow">Spring AI study workspace</p>
-                    <h1>Study Notes AI</h1>
+                    <span class="brand-mark">SA</span>
+                    <span class="brand-name">StudyAI</span>
                 </div>
                 <div class="status-pill" id="apiStatus">Ready</div>
+            </nav>
+
+            <header class="hero-copy">
+                <p class="eyebrow">Spring AI powered learning desk</p>
+                <h1>Turn your notes into a focused study assistant.</h1>
+                <p class="hero-text">Upload course material, ask contextual questions, search your library, and extract study insights from one clean workspace.</p>
             </header>
 
+            <div class="metrics-strip" aria-label="Workspace features">
+                <div>
+                    <strong>RAG</strong>
+                    <span>Context answers</span>
+                </div>
+                <div>
+                    <strong>Chroma</strong>
+                    <span>Vector search</span>
+                </div>
+                <div>
+                    <strong>Ollama</strong>
+                    <span>Local models</span>
+                </div>
+            </div>
+
+            <div class="preview-board" aria-hidden="true">
+                <div class="preview-toolbar">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div class="preview-grid">
+                    <div class="preview-card wide">
+                        <small>Ask your notes</small>
+                        <strong>Explain vector stores</strong>
+                        <p>Uses your uploaded notes as context for grounded answers.</p>
+                    </div>
+                    <div class="preview-card">
+                        <small>Insight</small>
+                        <strong>Medium</strong>
+                    </div>
+                    <div class="preview-card">
+                        <small>Library</small>
+                        <strong>24 chunks</strong>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="workspace">
             <section class="panel upload-panel" aria-labelledby="uploadTitle">
                 <div>
                     <p class="section-kicker">Notes library</p>

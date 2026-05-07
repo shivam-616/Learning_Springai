@@ -18,8 +18,15 @@ public class NoteRagService {
     }
     public String askTutor(String query, String subject) {
 
+
+        String normalizedSubject = subject.trim().toLowerCase();
+
         var qaAdvisor = QuestionAnswerAdvisor.builder(vectorstore)
-                .searchRequest(SearchRequest.builder().similarityThreshold(0.8d).filterExpression("subject == '" + subject + "'").topK(6).build())
+                .searchRequest(SearchRequest.builder()
+                        .similarityThreshold(0.5d) // Lowered for better recall
+                        .filterExpression("subject == '" + normalizedSubject + "'")
+                        .topK(6)
+                        .build())
                 .build();
 
         return chatclient.prompt()
@@ -28,5 +35,4 @@ public class NoteRagService {
                 .call()
                 .content();
     }
-
 }

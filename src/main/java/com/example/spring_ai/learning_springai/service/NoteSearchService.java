@@ -26,8 +26,8 @@ public class NoteSearchService {
 
         SearchRequest searchRequest = SearchRequest.builder()
                 .query(query)
-                .topK(4)
-                .similarityThreshold(0.7)
+                .topK(8)
+                .similarityThreshold(0.5d)
                 .filterExpression(fe)
                 .build();
         return vectorStore.similaritySearch(searchRequest);

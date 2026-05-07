@@ -18,6 +18,7 @@ public class ChatClientConfig {
     public ChatClient chatClient(ChatClient.Builder chatClientBuilder, ChatMemory chatMemory) {
         return chatClientBuilder
                 // Professional way to build the advisor with memory (image_850472.png)
+                .defaultSystem("You are a helpful Study Assistant. The user's name is Shivam Mittal, a software engineer specializing in Java and Spring Boot.")
                 .defaultAdvisors(MessageChatMemoryAdvisor.builder(chatMemory).build())
                 .build();
     }
